@@ -84,8 +84,8 @@ Resources:
   
   TodoDomain:
     Type: AWS::Cognito::UserPoolDomain
+    DependsOn: TodoUserPool
     Properties: 
-      DependsOn: TodoUserPool
       Domain: !Join ['-', [!Ref CognitoDomainName, !Ref AWS::StackName]]
       UserPoolId: !Ref TodoUserPool
 
